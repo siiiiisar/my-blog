@@ -5,7 +5,7 @@
 <header>
 	<a href="/">siiiisar</a>
 	<nav>
-		<a href="/blog">Blogs</a>
+		<a href="/blogs">Blogs</a>
 	</nav>
 </header>
 
