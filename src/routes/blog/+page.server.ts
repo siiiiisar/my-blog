@@ -1,8 +1,8 @@
-import type { PageServerLoad } from "./$types";
-import { getList } from "$lib/microcms";
+import type { PageServerLoad } from './$types';
+import { getList } from '$lib/microcms';
 
 export const load: PageServerLoad = async () => {
-  return await getList();
+	return await getList();
 };
 
 export const prerender = true;

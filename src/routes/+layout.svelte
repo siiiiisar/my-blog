@@ -1,16 +1,16 @@
 <script>
-  import "../app.css";
+	import '../app.css';
 </script>
 
 <header>
-  <a href="/">siiiisar</a>
-  <nav>
-    <a href="/blog">Blogs</a>
-  </nav>
+	<a href="/">siiiisar</a>
+	<nav>
+		<a href="/blog">Blogs</a>
+	</nav>
 </header>
 
-<slot/>
+<slot />
 
 <footer>
-  <p>&copy; Copyright 2024 by siiiiisar</p>
+	<p>&copy; Copyright 2024 by siiiiisar</p>
 </footer>
