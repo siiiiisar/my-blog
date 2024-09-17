@@ -1,16 +1,11 @@
 <script>
 	import '../app.css';
+	import Footer from '../components/Footer.svelte';
+	import Header from '../components/Header.svelte';
 </script>
 
-<header>
-	<a href="/">siiiisar</a>
-	<nav>
-		<a href="/blogs">Blogs</a>
-	</nav>
-</header>
+<Header/>
 
 <slot />
 
-<footer>
-	<p>&copy; Copyright 2024 by siiiiisar</p>
-</footer>
+<Footer/>

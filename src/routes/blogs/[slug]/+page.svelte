@@ -1,11 +1,12 @@
 <script lang="ts">
+	import CommonLayout from '../../../components/CommonLayout.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
 
-<h1>Article</h1>
-<p>ブログの内容</p>
-<div>
-	{@html data.content}
-</div>
+<CommonLayout title='Article'>
+	<div>
+		{@html data.content}
+	</div>
+</CommonLayout>
