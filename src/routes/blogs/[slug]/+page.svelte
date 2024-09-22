@@ -5,8 +5,8 @@
 	export let data: PageData;
 </script>
 
-<CommonLayout title='Article'>
-	<div>
+<CommonLayout title={data.title}>
+	<article class="markdown-body p-16 rounded-lg">
 		{@html data.content}
-	</div>
+	</article>
 </CommonLayout>

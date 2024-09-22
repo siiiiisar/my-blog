@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-200 text-base;
+    @apply bg-slate-100 text-base;
   }
 }
 
