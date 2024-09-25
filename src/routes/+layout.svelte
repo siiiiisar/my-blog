@@ -4,10 +4,10 @@
 	import Header from '../components/Header.svelte';
 </script>
 
-<Header/>
+<Header />
 
 <div class="mx-auto max-w-screen-lg px-3 py-6">
 	<slot />
 </div>
 
-<Footer/>
+<Footer />

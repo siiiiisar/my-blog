@@ -11,7 +11,7 @@
 		<a href="blogs/{content.id}">
 			<img
 				class="rounded-t-lg h-full w-full object-cover object-center"
-				src={content.eyecatch?.url ?? $page.url.origin + "/blog_no_image.jpg"}
+				src={content.eyecatch?.url ?? $page.url.origin + '/blog_no_image.jpg'}
 				alt={content.title}
 				loading="lazy"
 			/>
@@ -23,6 +23,6 @@
 				{content.title}
 			</p>
 		</a>
-		<p class="text-sm text-gray-500">{dayjs(content.createdAt).format("YYYY-MM-DD")}</p>
+		<p class="text-sm text-gray-500">{dayjs(content.createdAt).format('YYYY-MM-DD')}</p>
 	</div>
 </div>

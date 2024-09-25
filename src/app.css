@@ -1,9 +1,9 @@
 @tailwind base;
 
 @layer base {
-  body {
-    @apply bg-slate-100 text-base;
-  }
+	body {
+		@apply bg-slate-100 text-base;
+	}
 }
 
 @tailwind components;
