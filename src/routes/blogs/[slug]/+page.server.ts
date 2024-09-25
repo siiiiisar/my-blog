@@ -4,3 +4,5 @@ import { getDetal } from '$lib/microcms';
 export const load: PageServerLoad = async ({ params }) => {
 	return await getDetal(params.slug);
 };
+
+export const prerender = true;
