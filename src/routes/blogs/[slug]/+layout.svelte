@@ -1,5 +1,5 @@
 <script lang="ts">
-	import 'github-markdown-css/github-markdown-light.css';
+	import 'zenn-content-css';
 </script>
 
 <slot />

@@ -6,7 +6,7 @@
 </script>
 
 <CommonLayout title={data.title}>
-	<article class="markdown-body p-16 rounded-lg">
+	<article class="znc p-16 rounded-lg bg-white">
 		{@html data.content}
 	</article>
 </CommonLayout>
