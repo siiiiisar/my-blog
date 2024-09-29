@@ -17,9 +17,9 @@
 			/>
 		</a>
 	</div>
-	<div class="p-5 bg-slate-200">
+	<div class="p-5">
 		<a href="blogs/{content.id}">
-			<p class="mb-2 font-bold tracking-tight text-lg">
+			<p class="h-16 mb-2 font-bold tracking-tight text-lg line-clamp-2">
 				{content.title}
 			</p>
 		</a>
