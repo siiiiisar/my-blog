@@ -30,7 +30,7 @@ export const getList = async (queries?: MicroCMSQueries) => {
 	});
 };
 
-export const getDetal = async (contentId: string, queries?: MicroCMSQueries) => {
+export const getDetail = async (contentId: string, queries?: MicroCMSQueries) => {
 	return await client.getListDetail<Blog>({
 		endpoint: 'blogs',
 		contentId: contentId,
