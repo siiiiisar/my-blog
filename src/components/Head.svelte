@@ -14,5 +14,5 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content={$page.url.origin + '/ogp.png'} />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="siiiiisar" />
+	<meta name="twitter:site" content="@siiiiisar" />
 </svelte:head>
