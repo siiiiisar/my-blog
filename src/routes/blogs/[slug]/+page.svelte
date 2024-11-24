@@ -10,8 +10,8 @@
 	<Head pageTitle={data.title} description={data.meta.description} />
 {/if}
 <svelte:head>
-  <script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </svelte:head>
 
 <CommonLayout title={data.title}>
