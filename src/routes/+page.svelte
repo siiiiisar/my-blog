@@ -1,6 +1,11 @@
-<script>
+<script lang="ts">
 	import GradientText from '../components/GradientText.svelte';
+	import Head from '../components/Head.svelte';
+
+	const pageTitle: string = 'Home';
 </script>
+
+<Head {pageTitle} />
 
 <div>
 	<h1 class="mt-16 text-3xl font-bold">

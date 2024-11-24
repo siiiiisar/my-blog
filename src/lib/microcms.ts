@@ -6,6 +6,12 @@ const client = createClient({
 	apiKey: MICROCMS_API_KEY
 });
 
+type Metadata = {
+	fieldId: string;
+	title?: string;
+	description?: string;
+	image?: MicroCMSImage;
+};
 export type Blog = {
 	id: string;
 	createdAt: string;
@@ -15,6 +21,7 @@ export type Blog = {
 	title: string;
 	content: string;
 	eyecatch?: MicroCMSImage;
+	meta?: Metadata;
 };
 export type BlogResponse = {
 	totalCount: number;
