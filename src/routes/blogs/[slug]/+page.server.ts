@@ -5,4 +5,4 @@ export const load: PageServerLoad = ({ params }) => {
 	redirect(301, '/' + params.slug);
 };
 
-export const prerender = true;
+export const prerender = false;
