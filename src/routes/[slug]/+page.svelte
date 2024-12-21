@@ -1,6 +1,6 @@
 <script lang="ts">
-	import CommonLayout from '../../../components/CommonLayout.svelte';
-	import Head from '../../../components/Head.svelte';
+	import CommonLayout from '../../components/CommonLayout.svelte';
+	import Head from '../../components/Head.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;

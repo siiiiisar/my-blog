@@ -1,8 +1,8 @@
 import type { PageServerLoad } from './$types';
-import { getDetail } from '$lib/microcms';
+import { redirect } from '@sveltejs/kit';
 
-export const load: PageServerLoad = async ({ params }) => {
-	return await getDetail(params.slug);
+export const load: PageServerLoad = ({ params }) => {
+	redirect(301, '/' + params.slug);
 };
 
 export const prerender = true;

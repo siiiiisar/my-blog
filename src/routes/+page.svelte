@@ -1,20 +1,19 @@
 <script lang="ts">
-	import GradientText from '../components/GradientText.svelte';
+	import type { PageData } from './$types';
+	import BlogCard from '../components/BlogCard.svelte';
+	import CommonLayout from '../components/CommonLayout.svelte';
 	import Head from '../components/Head.svelte';
 
-	const pageTitle: string = 'Home';
+	export let data: PageData;
+	const pageTitle: string = 'siiiiisar.blog';
 </script>
 
 <Head {pageTitle} />
 
-<div>
-	<h1 class="mt-16 text-3xl font-bold">
-		Hi! I'm <GradientText text="Shunsuke Ueda" /> ✌🏻
-	</h1>
-	<br />
-	<p class="mt-6 text-xl">
-		京都で働くソフトウェアエンジニアです。
-		<br />
-		バックエンドを中心に備忘録がメインのブログです。
-	</p>
-</div>
+<CommonLayout>
+	<div class="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3">
+		{#each data.contents as content}
+			<BlogCard {content} />
+		{/each}
+	</div>
+</CommonLayout>
