@@ -9,9 +9,9 @@
 <Head {pageTitle} />
 
 <CommonLayout title={pageTitle}>
-	<h1 class="mt-16 text-3xl font-bold">
-		Hi! I'm <GradientText text="Shunsuke Ueda" /> ✌🏻✌🏻✌🏻
-	</h1>
+	<h2 class="mt-16 text-3xl font-bold">
+		Hi! I'm <GradientText text="@siiiiisar" /> ✌🏻
+	</h2>
 	<br />
 	<p class="mt-6 text-xl">
 		京都で働くソフトウェアエンジニアです。
