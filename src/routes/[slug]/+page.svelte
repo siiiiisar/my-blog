@@ -15,7 +15,7 @@
 </svelte:head>
 
 <CommonLayout title={data.title}>
-	<article class="znc p-16 rounded-lg bg-white">
+	<article class="znc p-6 lg:p-16 sm:p-10 rounded-lg bg-white">
 		{@html data.content}
 	</article>
 </CommonLayout>
