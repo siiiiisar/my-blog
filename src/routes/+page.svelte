@@ -11,9 +11,9 @@
 <Head {pageTitle} />
 
 <CommonLayout>
-	<ul class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+	<div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
 		{#each data.contents as content}
 			<BlogCard {content} />
 		{/each}
-	</ul>
+	</div>
 </CommonLayout>
