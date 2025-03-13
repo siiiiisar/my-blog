@@ -5,9 +5,7 @@
 </script>
 
 <Header />
-
-<div class="mx-auto max-w-screen-lg px-3 py-6">
+<main>
 	<slot />
-</div>
-
+</main>
 <Footer />

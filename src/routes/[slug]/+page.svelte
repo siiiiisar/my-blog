@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CommonLayout from '../../components/CommonLayout.svelte';
+	import BlogLayout from '../../components/BlogLayout.svelte';
 	import Head from '../../components/Head.svelte';
 	import type { PageData } from './$types';
 
@@ -14,8 +14,8 @@
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </svelte:head>
 
-<CommonLayout title={data.title}>
-	<article class="znc p-6 lg:p-16 sm:p-10 rounded-lg bg-white">
+<BlogLayout title={data.title}>
+	<div class="znc p-6 lg:p-16 sm:p-10 rounded-lg bg-white">
 		{@html data.content}
-	</article>
-</CommonLayout>
+	</div>
+</BlogLayout>
