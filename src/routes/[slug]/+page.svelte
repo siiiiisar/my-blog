@@ -2,6 +2,7 @@
 	import BlogLayout from '../../components/BlogLayout.svelte';
 	import Head from '../../components/Head.svelte';
 	import type { PageData } from './$types';
+	import TableOfContents from '../../components/TableOfContents.svelte';
 
 	export let data: PageData;
 </script>
@@ -14,8 +15,11 @@
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </svelte:head>
 
-<BlogLayout title={data.title}>
-	<div class="znc p-6 lg:p-16 sm:p-10 rounded-lg bg-white">
+<BlogLayout title={data.title} publishedAt={data.publishedAt}>
+	<aside class="mb-5 2xl:order-last">
+		<TableOfContents />
+	</aside>
+	<section class="znc p-6 lg:p-16 sm:p-10 rounded-lg bg-white xl:col-span-3 border border-gray-200">
 		{@html data.content}
-	</div>
+	</section>
 </BlogLayout>

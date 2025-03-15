@@ -1,10 +1,24 @@
 <script lang="ts">
-	export let title: string = '';
+	import dayjs from 'dayjs';
+
+	export let title: string;
+	export let publishedAt: string;
 </script>
 
-<article class="mx-auto max-w-screen-lg px-3 py-6">
-	<header>
-		<h1 class="text-center text-4xl m-10 font-bold">{title}</h1>
+<article>
+	<header class="px-20 py-10 text-center">
+		<h1>
+			<span class="text-lg lg:text-2xl font-bold">
+				{title}
+			</span>
+		</h1>
+		<div class="mt-5">
+			<span class="text-sm text-gray-500 tracking-wider">
+				{dayjs(publishedAt).format('YYYY/MM/DD')} 公開
+			</span>
+		</div>
 	</header>
-	<slot />
+	<div class="sm:p-5 xl:mx-60 2xl:p-10 2xl:grid 2xl:grid-cols-4 2xl:gap-8">
+		<slot />
+	</div>
 </article>

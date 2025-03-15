@@ -36,6 +36,7 @@
 	"dependencies": {
 		"dayjs": "^1.11.13",
 		"microcms-js-sdk": "^3.1.2",
+		"tocbot": "^4.35.1",
 		"zenn-content-css": "^0.1.157"
 	}
 }
