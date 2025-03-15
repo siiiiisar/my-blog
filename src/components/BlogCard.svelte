@@ -2,8 +2,13 @@
 	import type { Blog } from '$lib/microcms';
 	import { page } from '$app/stores';
 	import dayjs from 'dayjs';
+	import 'dayjs/locale/ja';
+	import relativeTime from "dayjs/plugin/relativeTime";
 
 	export let content: Blog;
+
+	dayjs.locale('ja');
+	dayjs.extend(relativeTime);
 </script>
 
 <article class="relative bg-white border border-gray-200 rounded-lg shadow overflow-hidden">
@@ -23,6 +28,6 @@
 		</a>
 	</h2>
 	<footer class="absolute left-5 bottom-2">
-		<p class="text-sm text-gray-500">{dayjs(content.createdAt).format('YYYY-MM-DD')}</p>
+		<p class="text-sm text-gray-500">{dayjs(content.publishedAt).fromNow()}</p>
 	</footer>
 </article>
