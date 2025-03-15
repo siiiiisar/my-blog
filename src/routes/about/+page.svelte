@@ -8,7 +8,7 @@
 
 <Head {pageTitle} />
 
-<CommonLayout title={pageTitle}>
+<CommonLayout>
 	<h2 class="mt-16 text-3xl font-bold">
 		Hi! I'm <GradientText text="@siiiiisar" /> ✌🏻
 	</h2>
