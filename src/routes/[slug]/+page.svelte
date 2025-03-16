@@ -15,7 +15,7 @@
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </svelte:head>
 
-<BlogLayout title={data.title} publishedAt={data.publishedAt}>
+<BlogLayout {data}>
 	<aside class="mb-5 2xl:order-last">
 		<TableOfContents />
 	</aside>

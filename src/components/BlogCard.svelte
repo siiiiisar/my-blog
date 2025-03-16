@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Blog } from '$lib/microcms';
+	import type { Blog } from '$lib/microcms/blog';
 	import { page } from '$app/stores';
 	import dayjs from 'dayjs';
 	import 'dayjs/locale/ja';
-	import relativeTime from "dayjs/plugin/relativeTime";
+	import relativeTime from 'dayjs/plugin/relativeTime';
 
 	export let content: Blog;
 

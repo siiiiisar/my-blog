@@ -1,16 +1,20 @@
-import { createClient, type MicroCMSImage, type MicroCMSQueries } from 'microcms-js-sdk';
-import { MICROCMS_SERVICE_DOMAIN, MICROCMS_API_KEY } from '$env/static/private';
+import type { MicroCMSImage, MicroCMSQueries } from 'microcms-js-sdk';
+import { microcmsClient } from './client';
 
-const client = createClient({
-	serviceDomain: MICROCMS_SERVICE_DOMAIN,
-	apiKey: MICROCMS_API_KEY
-});
-
+type Tag = {
+	id: string;
+	createdAt: string;
+	updatedAt: string;
+	publishedAt: string;
+	revisedAt: string;
+	name: string;
+};
 type Metadata = {
 	fieldId: string;
 	title?: string;
 	description?: string;
 	image?: MicroCMSImage;
+	tags?: Tag[];
 };
 export type Blog = {
 	id: string;
@@ -31,14 +35,14 @@ export type BlogResponse = {
 };
 
 export const getList = async (queries?: MicroCMSQueries) => {
-	return await client.get<BlogResponse>({
+	return await microcmsClient.get<BlogResponse>({
 		endpoint: 'blogs',
 		queries
 	});
 };
 
 export const getDetail = async (contentId: string, queries?: MicroCMSQueries) => {
-	return await client.getListDetail<Blog>({
+	return await microcmsClient.getListDetail<Blog>({
 		endpoint: 'blogs',
 		contentId: contentId,
 		queries
