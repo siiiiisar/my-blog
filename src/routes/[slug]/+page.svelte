@@ -19,7 +19,9 @@
 	<aside class="mb-5 2xl:order-last">
 		<TableOfContents />
 	</aside>
-	<section class="znc p-6 lg:p-16 sm:p-10 rounded-lg bg-white xl:col-span-3 border border-gray-200">
+	<section
+		class="znc p-6 lg:p-12 sm:p-10 rounded-lg bg-white xl:col-span-3 border border-gray-200/80 shadow-sm"
+	>
 		<!-- eslint-disable -->
 		{@html data.content}
 	</section>

@@ -5,10 +5,14 @@
 
 	export let data: PageData;
 	let url = $page.url.href;
+	let copied = false;
 
 	const copyToClipboard = () => {
 		navigator.clipboard.writeText(url);
-		alert('URLをコピーしました');
+		copied = true;
+		setTimeout(() => {
+			copied = false;
+		}, 2000);
 	};
 </script>
 
@@ -24,7 +28,7 @@
 				{dayjs(data.publishedAt).format('YYYY/MM/DD')} 公開
 			</span>
 		</div>
-		<div class="flex justify-center mt-5">
+		<div class="flex justify-center mt-5 space-x-4">
 			<a
 				href="https://b.hatena.ne.jp/entry/"
 				class="hatena-bookmark-button"
@@ -48,26 +52,65 @@
 			<a
 				href="https://twitter.com/intent/tweet?url={url}&text={data.title}&via=siiiiisar"
 				role="button"
-				class="inline-block p-2"
+				class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="Twitterでシェア"
 			>
-				<span class="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-black">
-					<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512">
-						<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. -->
-						<path
-							d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
-						/>
-					</svg>
-				</span>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="20"
+					height="20"
+					viewBox="0 0 512 512"
+					fill="currentColor"
+				>
+					<path
+						d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+					/>
+				</svg>
 			</a>
-			<!-- urlをコピーするボタン -->
-			<button class="inline-block p-2" on:click={copyToClipboard}>
-				<span class="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-black">
-					<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+			<button
+				class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+				on:click={copyToClipboard}
+				aria-label="URLをコピー"
+			>
+				{#if copied}
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						fill="currentColor"
+						class="bi bi-clipboard-check"
+						viewBox="0 0 16 16"
+					>
 						<path
-							d="M18 2H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2zm-2 14H8V4h8zm-6 4h4v2h-4z"
+							fill-rule="evenodd"
+							d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0"
+						/>
+						<path
+							d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"
+						/>
+						<path
+							d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"
 						/>
 					</svg>
-				</span>
+				{:else}
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						fill="currentColor"
+						class="bi bi-clipboard"
+						viewBox="0 0 16 16"
+					>
+						<path
+							d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"
+						/>
+						<path
+							d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"
+						/>
+					</svg>
+				{/if}
 			</button>
 		</div>
 	</header>
