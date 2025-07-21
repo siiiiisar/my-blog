@@ -5,4 +5,4 @@ export const load: PageServerLoad = async ({ params }) => {
 	return await getList({ filters: `tags[contains]${params.slug}` });
 };
 
-export const prerender = false;
+export const prerender = true;
