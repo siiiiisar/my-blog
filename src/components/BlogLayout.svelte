@@ -2,6 +2,7 @@
 	import dayjs from 'dayjs';
 	import type { PageData } from '../routes/[slug]/$types';
 	import { page } from '$app/stores';
+	import Tag from './Tag.svelte';
 
 	export let data: PageData;
 	let url = $page.url.href;
@@ -116,12 +117,14 @@
 	</header>
 	<div class="sm:p-5 xl:mx-60 2xl:p-10">
 		<div class="flex">
-			{#if data.meta !== undefined && data.meta.tags !== undefined}
-				{#each data.meta.tags as tag}
-					<div class="mr-2 mb-5 px-3 py-1 bg-white rounded-3xl border border-grey-200">
-						<span class="text-sm text-gray-500">{tag.name}</span>
-					</div>
-				{/each}
+			{#if data.meta?.tags && data.meta.tags.length > 0}
+				<div class="mb-2 flex flex-wrap">
+					{#each data.meta.tags as tag}
+						<div class="mr-2 mb-2">
+							<Tag href={`/tags/${tag.id}`}>{tag.name}</Tag>
+						</div>
+					{/each}
+				</div>
 			{/if}
 		</div>
 		<div class="2xl:grid 2xl:grid-cols-4 2xl:gap-8">
