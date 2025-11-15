@@ -48,7 +48,7 @@
 				type="text/javascript"
 				src="https://b.st-hatena.com/js/bookmark_button.js"
 				charset="utf-8"
-				async="async"
+				async
 			></script>
 			<a
 				href="https://twitter.com/intent/tweet?url={url}&text={data.title}&via=siiiiisar"
