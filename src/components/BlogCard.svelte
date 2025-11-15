@@ -12,12 +12,12 @@
 </script>
 
 <article
-	class="group relative flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+	class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
 >
 	<header class="aspect-h-9 aspect-w-16 overflow-hidden">
 		<a href={content.id}>
 			<img
-				class="rounded-t-lg h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+				class="h-full w-full rounded-t-lg object-cover object-center transition-transform duration-300 group-hover:scale-105"
 				src={content.eyecatch?.url ?? $page.url.origin + '/blog_no_image.jpg'}
 				alt={content.title}
 				loading="lazy"
@@ -25,7 +25,7 @@
 		</a>
 	</header>
 	<div class="flex-1 p-5">
-		<h2 class="mb-2 font-bold text-lg line-clamp-3">
+		<h2 class="mb-2 line-clamp-3 text-lg font-bold">
 			<a href={content.id}>
 				{content.title}
 			</a>

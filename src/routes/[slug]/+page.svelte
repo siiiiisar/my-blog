@@ -20,7 +20,7 @@
 		<TableOfContents />
 	</aside>
 	<section
-		class="znc p-6 lg:p-12 sm:p-10 rounded-lg bg-white xl:col-span-3 border border-gray-200/80 shadow-sm"
+		class="znc rounded-lg border border-gray-200/80 bg-white p-6 shadow-sm sm:p-10 lg:p-12 xl:col-span-3"
 	>
 		<!-- eslint-disable -->
 		{@html data.content}

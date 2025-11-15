@@ -20,16 +20,16 @@
 <article>
 	<header class="px-20 py-10 text-center">
 		<h1>
-			<span class="text-lg lg:text-2xl font-bold">
+			<span class="text-lg font-bold lg:text-2xl">
 				{data.title}
 			</span>
 		</h1>
 		<div class="mt-5">
-			<span class="text-sm text-gray-500 tracking-wider">
+			<span class="text-sm tracking-wider text-gray-500">
 				{dayjs(data.publishedAt).format('YYYY/MM/DD')} 公開
 			</span>
 		</div>
-		<div class="flex justify-center mt-5 space-x-4">
+		<div class="mt-5 flex justify-center space-x-4">
 			<a
 				href="https://b.hatena.ne.jp/entry/"
 				class="hatena-bookmark-button"
@@ -53,7 +53,7 @@
 			<a
 				href="https://twitter.com/intent/tweet?url={url}&text={data.title}&via=siiiiisar"
 				role="button"
-				class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+				class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300"
 				target="_blank"
 				rel="noopener noreferrer"
 				aria-label="Twitterでシェア"
@@ -71,7 +71,7 @@
 				</svg>
 			</a>
 			<button
-				class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors"
+				class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 transition-colors hover:bg-gray-300"
 				on:click={copyToClipboard}
 				aria-label="URLをコピー"
 			>
@@ -120,7 +120,7 @@
 			{#if data.meta?.tags && data.meta.tags.length > 0}
 				<div class="mb-2 flex flex-wrap">
 					{#each data.meta.tags as tag}
-						<div class="mr-2 mb-2">
+						<div class="mb-2 mr-2">
 							<Tag href={`/tags/${tag.id}`}>{tag.name}</Tag>
 						</div>
 					{/each}

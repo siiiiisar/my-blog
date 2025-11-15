@@ -11,7 +11,7 @@
 	.znc h4,
 	.znc h5,
 	.znc h6 {
-		@apply font-bold mb-4 mt-8;
+		@apply mb-4 mt-8 font-bold;
 	}
 
 	.znc h1 {
@@ -19,7 +19,7 @@
 	}
 
 	.znc h2 {
-		@apply text-2xl border-b pb-2;
+		@apply border-b pb-2 text-2xl;
 	}
 
 	.znc h3 {
@@ -27,7 +27,7 @@
 	}
 
 	.znc p {
-		@apply leading-relaxed mb-4;
+		@apply mb-4 leading-relaxed;
 	}
 
 	.znc a {
@@ -35,7 +35,7 @@
 	}
 
 	.znc pre {
-		@apply bg-gray-800 text-white rounded-lg p-4 my-4 overflow-x-auto;
+		@apply my-4 overflow-x-auto rounded-lg bg-gray-800 p-4 text-white;
 	}
 
 	.znc code {
@@ -43,7 +43,7 @@
 	}
 
 	.znc :not(pre) > code {
-		@apply bg-gray-200 text-gray-800 rounded px-1 py-0.5;
+		@apply rounded bg-gray-200 px-1 py-0.5 text-gray-800;
 	}
 }
 

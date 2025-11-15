@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.27.4/tocbot.css" />
 </svelte:head>
 
-<div class="p-5 rounded-lg bg-white sticky top-[100px] border border-gray-200">
+<div class="sticky top-[100px] rounded-lg border border-gray-200 bg-white p-5">
 	<details>
 		<summary class="p-2">目次</summary>
 		<nav class="toc" />
