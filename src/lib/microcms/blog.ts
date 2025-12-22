@@ -41,6 +41,18 @@ export const getList = async (queries?: MicroCMSQueries) => {
 	});
 };
 
+export const getListByTagId = async (tagId: string, queries?: MicroCMSQueries) => {
+	const filters = [`meta.tags[contains]${tagId}`, queries?.filters].filter(Boolean).join('&&');
+
+	return await microcmsClient.get<BlogResponse>({
+		endpoint: 'blogs',
+		queries: {
+			...queries,
+			filters
+		}
+	});
+};
+
 export const getDetail = async (contentId: string, queries?: MicroCMSQueries) => {
 	return await microcmsClient.getListDetail<Blog>({
 		endpoint: 'blogs',

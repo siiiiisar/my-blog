@@ -1,12 +1,7 @@
 <script lang="ts">
 	import CommonLayout from '../../components/CommonLayout.svelte';
 	import GradientText from '../../components/GradientText.svelte';
-	import Head from '../../components/Head.svelte';
-
-	const pageTitle: string = 'About';
 </script>
-
-<Head {pageTitle} />
 
 <CommonLayout>
 	<h2 class="mt-16 text-3xl font-bold">
