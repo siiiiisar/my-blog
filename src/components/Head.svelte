@@ -2,9 +2,15 @@
 	import { page } from '$app/stores';
 	import { App } from '$config/app';
 
-	export let pageTitle: string;
-	export let description: string | undefined = undefined;
-	export let ogImage: string | undefined = undefined;
+	interface Props {
+		pageTitle: string;
+		description?: string | undefined;
+		ogImage?: string | undefined;
+	}
+
+	export let pageTitle: Props['pageTitle'];
+	export let description: Props['description'] = undefined;
+	export let ogImage: Props['ogImage'] = undefined;
 
 	let metaDescription: string;
 	let resolvedOgImage: string;

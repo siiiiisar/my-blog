@@ -34,23 +34,40 @@ export type BlogResponse = {
 	contents: Blog[];
 };
 
+const createEmptyBlogResponse = (): BlogResponse => ({
+	totalCount: 0,
+	offset: 0,
+	limit: 0,
+	contents: []
+});
+
 export const getList = async (queries?: MicroCMSQueries) => {
-	return await microcmsClient.get<BlogResponse>({
-		endpoint: 'blogs',
-		queries
-	});
+	try {
+		return await microcmsClient.get<BlogResponse>({
+			endpoint: 'blogs',
+			queries
+		});
+	} catch (error) {
+		console.error('[microcms] failed to fetch blog list', error);
+		return createEmptyBlogResponse();
+	}
 };
 
 export const getListByTagId = async (tagId: string, queries?: MicroCMSQueries) => {
 	const filters = [`meta.tags[contains]${tagId}`, queries?.filters].filter(Boolean).join('&&');
 
-	return await microcmsClient.get<BlogResponse>({
-		endpoint: 'blogs',
-		queries: {
-			...queries,
-			filters
-		}
-	});
+	try {
+		return await microcmsClient.get<BlogResponse>({
+			endpoint: 'blogs',
+			queries: {
+				...queries,
+				filters
+			}
+		});
+	} catch (error) {
+		console.error('[microcms] failed to fetch tagged blog list', error);
+		return createEmptyBlogResponse();
+	}
 };
 
 export const getDetail = async (contentId: string, queries?: MicroCMSQueries) => {

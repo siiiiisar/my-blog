@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '../app.css';
 	import Footer from '../components/Footer.svelte';
 	import Header from '../components/Header.svelte';
@@ -12,7 +12,7 @@
 	};
 </script>
 
-<Head {...$page.data.seo ?? defaultSeo} />
+<Head {...($page.data.seo ?? defaultSeo)} />
 <Header />
 <main>
 	<slot />

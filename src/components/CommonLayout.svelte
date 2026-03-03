@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let title: string = '';
+	export let title = '';
 </script>
 
 <div class="mx-auto max-w-screen-lg px-3 py-6">

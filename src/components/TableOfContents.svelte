@@ -1,17 +1,24 @@
 <script lang="ts">
-	import { onDestroy, onMount } from 'svelte';
-	import * as tocbot from 'tocbot';
+	import { onMount } from 'svelte';
+	import tocbot from 'tocbot';
 
 	onMount(() => {
+		const tocElement = document.querySelector('.toc');
+		const contentElement = document.querySelector('.znc');
+
+		if (!tocElement || !contentElement) {
+			return;
+		}
+
 		tocbot.init({
 			tocSelector: '.toc',
 			contentSelector: '.znc',
 			headingSelector: 'h1, h2, h3'
 		});
-	});
 
-	onDestroy(() => {
-		tocbot.destroy();
+		return () => {
+			tocbot.destroy();
+		};
 	});
 </script>
 
@@ -22,6 +29,6 @@
 <div class="sticky top-[100px] rounded-lg border border-gray-200 bg-white p-5">
 	<details>
 		<summary class="p-2">目次</summary>
-		<nav class="toc" />
+		<nav class="toc"></nav>
 	</details>
 </div>

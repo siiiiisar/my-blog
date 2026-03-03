@@ -5,8 +5,9 @@
 	import Tag from './Tag.svelte';
 
 	export let data: PageData;
-	let url = $page.url.href;
+	let url = '';
 	let copied = false;
+	$: url = $page.url.href;
 
 	const copyToClipboard = () => {
 		navigator.clipboard.writeText(url);
