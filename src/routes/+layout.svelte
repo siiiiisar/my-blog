@@ -12,7 +12,7 @@
 	};
 </script>
 
-<Head {...($page.data.seo ?? defaultSeo)} />
+<Head {...$page.data.seo ?? defaultSeo} />
 <Header />
 <main>
 	<slot />
