@@ -35,15 +35,28 @@
 	}
 
 	.znc pre {
-		@apply my-4 overflow-x-auto rounded-lg bg-gray-800 p-4 text-white;
+		@apply my-4 overflow-x-auto rounded-lg bg-gray-950 text-gray-100;
 	}
 
 	.znc code {
 		@apply font-mono text-sm;
 	}
 
+	.znc pre code {
+		@apply text-inherit;
+	}
+
 	.znc :not(pre) > code {
 		@apply rounded bg-gray-200 px-1 py-0.5 text-gray-800;
+	}
+
+	.znc pre.shiki .line {
+		@apply block;
+		white-space: pre;
+	}
+
+	.znc pre.shiki code {
+		white-space: normal;
 	}
 }
 
