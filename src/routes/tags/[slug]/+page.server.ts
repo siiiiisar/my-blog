@@ -1,8 +1,8 @@
-import { getListByTagId } from '$lib/microcms/blog';
+import { getBlogListByTagId } from '$lib/server/content/blog-repository';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
-	const list = await getListByTagId(params.slug, { limit: 100 });
+	const list = await getBlogListByTagId(params.slug, { limit: 100 });
 
 	return {
 		...list,

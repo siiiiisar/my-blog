@@ -15,6 +15,6 @@ const sanitizeOptions: IOptions = {
 	}
 };
 
-export const sanitizeArticleHtml = (rawHtml: string): string => {
+export function sanitizeArticleHtml(rawHtml: string): string {
 	return sanitizeHtml(rawHtml, sanitizeOptions);
-};
+}

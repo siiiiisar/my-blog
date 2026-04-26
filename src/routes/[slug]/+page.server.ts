@@ -1,16 +1,14 @@
 import type { PageServerLoad } from './$types';
-import { getDetail } from '$lib/microcms/blog';
-import { sanitizeArticleHtml } from '$lib/sanitize-html/sanitizer';
-import { highlightCodeBlocksInHtml } from '$lib/server/content/highlight-code-blocks';
+import { getBlogDetail } from '$lib/server/content/blog-repository';
+import { transformArticleHtml } from '$lib/server/content/transform-article-html';
 
 export const load: PageServerLoad = async ({ params }) => {
-	const blog = await getDetail(params.slug);
-	const sanitizedContent = sanitizeArticleHtml(blog.content);
-	const highlightedContent = await highlightCodeBlocksInHtml(sanitizedContent);
+	const blog = await getBlogDetail(params.slug);
+	const transformedContent = await transformArticleHtml(blog.content);
 
 	return {
 		...blog,
-		content: highlightedContent,
+		content: transformedContent,
 		seo: {
 			pageTitle: blog.title,
 			description: blog.meta?.description,
