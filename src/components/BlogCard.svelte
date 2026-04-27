@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Blog } from '$lib/microcms/blog';
+	import type { Blog } from '$lib/content/blog';
 	import { page } from '$app/stores';
 	import dayjs from 'dayjs';
 	import 'dayjs/locale/ja';
