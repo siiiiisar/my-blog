@@ -1,8 +1,8 @@
-import { getBlogListByTagId } from '$lib/server/content/blog-repository';
+import { listBy } from '$lib/server/content/blog-repository';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
-	const list = await getBlogListByTagId(params.slug, { limit: 100 });
+	const list = await listBy(params.slug, { limit: 100 });
 
 	return {
 		...list,

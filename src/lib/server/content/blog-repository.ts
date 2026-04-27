@@ -4,11 +4,18 @@ import { microcmsClient } from '$lib/server/cms/microcms-client';
 
 const BLOGS_ENDPOINT = 'blogs';
 
-export async function getBlogList(queries?: MicroCMSQueries): Promise<BlogList> {
+export async function listBy(tagId?: string, queries?: MicroCMSQueries): Promise<BlogList> {
+	const filters = [tagId ? `meta.tags[contains]${tagId}` : undefined, queries?.filters]
+		.filter(Boolean)
+		.join('&&');
+
 	try {
 		return await microcmsClient.get<BlogList>({
 			endpoint: BLOGS_ENDPOINT,
-			queries
+			queries: {
+				...queries,
+				...(filters ? { filters } : {})
+			}
 		});
 	} catch (error) {
 		console.error('[microcms] failed to fetch blog list', error);
@@ -16,27 +23,7 @@ export async function getBlogList(queries?: MicroCMSQueries): Promise<BlogList> 
 	}
 }
 
-export async function getBlogListByTagId(
-	tagId: string,
-	queries?: MicroCMSQueries
-): Promise<BlogList> {
-	const filters = [`meta.tags[contains]${tagId}`, queries?.filters].filter(Boolean).join('&&');
-
-	try {
-		return await microcmsClient.get<BlogList>({
-			endpoint: BLOGS_ENDPOINT,
-			queries: {
-				...queries,
-				filters
-			}
-		});
-	} catch (error) {
-		console.error('[microcms] failed to fetch tagged blog list', error);
-		return createEmptyBlogList();
-	}
-}
-
-export async function getBlogDetail(contentId: string, queries?: MicroCMSQueries): Promise<Blog> {
+export async function findBy(contentId: string, queries?: MicroCMSQueries): Promise<Blog> {
 	return await microcmsClient.getListDetail<Blog>({
 		endpoint: BLOGS_ENDPOINT,
 		contentId,
