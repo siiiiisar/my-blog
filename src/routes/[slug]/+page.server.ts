@@ -1,9 +1,9 @@
 import type { PageServerLoad } from './$types';
-import { getBlogDetail } from '$lib/server/content/blog-repository';
+import { findBy } from '$lib/server/content/blog-repository';
 import { transformArticleHtml } from '$lib/server/content/transform-article-html';
 
 export const load: PageServerLoad = async ({ params }) => {
-	const blog = await getBlogDetail(params.slug);
+	const blog = await findBy(params.slug);
 	const transformedContent = await transformArticleHtml(blog.content);
 
 	return {
