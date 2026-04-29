@@ -6,6 +6,7 @@
 </script>
 
 <ul>
+	<div class="pointer-events-none relative h-20 select-none"></div>
 	{#each data.contents as content}
 		<BlogCard {content} />
 	{/each}

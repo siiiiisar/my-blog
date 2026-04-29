@@ -1,7 +1,7 @@
 <script lang="ts">
-	import BlogLayout from '../../components/BlogLayout.svelte';
+	import BlogLayout from '../../../components/BlogLayout.svelte';
 	import type { PageData } from './$types';
-	import TableOfContents from '../../components/TableOfContents.svelte';
+	import TableOfContents from '../../../components/TableOfContents.svelte';
 
 	export let data: PageData;
 </script>

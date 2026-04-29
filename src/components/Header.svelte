@@ -13,7 +13,7 @@
 	<nav class="nav">
 		<div class="spacer"></div>
 		<div class="right">
-			<a href="/about"> About </a>
+			<a href="/blogs"> Blog </a>
 		</div>
 	</nav>
 </header>

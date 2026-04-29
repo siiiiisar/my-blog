@@ -1,8 +1,20 @@
 import type { PageServerLoad } from './$types';
-import { redirect } from '@sveltejs/kit';
+import { findBy } from '$lib/server/content/blog-repository';
+import { transformArticleHtml } from '$lib/server/content/transform-article-html';
 
-export const load: PageServerLoad = ({ params }) => {
-	redirect(301, '/' + params.slug);
+export const load: PageServerLoad = async ({ params }) => {
+	const blog = await findBy(params.slug);
+	const transformedContent = await transformArticleHtml(blog.content);
+
+	return {
+		...blog,
+		content: transformedContent,
+		seo: {
+			pageTitle: blog.title,
+			description: blog.meta?.description,
+			ogImage: blog.meta?.image?.url ?? blog.eyecatch?.url
+		}
+	};
 };
 
-export const prerender = false;
+export const prerender = 'auto';

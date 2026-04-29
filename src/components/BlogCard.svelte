@@ -8,10 +8,12 @@
 
 	dayjs.locale('ja');
 	dayjs.extend(relativeTime);
+
+	const url = '/blogs/' + content.id;
 </script>
 
 <div>
-	<a class="item block" href={content.id}>
+	<a class="item block" href={url}>
 		<li class="flex flex-col gap-2">
 			<span class="text-lg">
 				{content.title}
