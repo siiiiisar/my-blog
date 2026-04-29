@@ -14,7 +14,7 @@
 
 <Head {...$page.data.seo ?? defaultSeo} />
 <Header />
-<main>
+<main class="of-x-hidden px-7 py-10">
 	<slot />
 </main>
 <Footer />

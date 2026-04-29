@@ -5,8 +5,8 @@
 	export let data: BlogList;
 </script>
 
-<div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+<ul>
 	{#each data.contents as content}
 		<BlogCard {content} />
 	{/each}
-</div>
+</ul>
