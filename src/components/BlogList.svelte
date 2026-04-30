@@ -6,8 +6,13 @@
 </script>
 
 <ul>
-	<div class="pointer-events-none relative h-20 select-none"></div>
-	{#each blogs as blog}
-		<BlogCard content={blog} />
+	<div
+		class="slide-enter pointer-events-none relative h-20 select-none"
+		style="--enter-stage: 0;"
+	></div>
+	{#each blogs as blog, idx}
+		<div class="slide-enter" style={`--enter-stage: ${idx + 1};`}>
+			<BlogCard content={blog} />
+		</div>
 	{/each}
 </ul>

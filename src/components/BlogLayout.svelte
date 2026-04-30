@@ -8,14 +8,14 @@
 
 <article>
 	<header>
-		<h1>
+		<h1 class="slide-enter" style="--enter-stage: 0;">
 			{blog.title}
 		</h1>
-		<p class="mt-5 opacity-50">
+		<p class="slide-enter mt-5 opacity-50" style="--enter-stage: 1;">
 			{dayjs(blog.publishedAt).format('YYYY/MM/DD')}
 		</p>
 	</header>
-	<div class="flex">
+	<div class="slide-enter flex" style="--enter-stage: 2;">
 		{#if blog.meta?.tags?.length}
 			<div class="mb-2 flex flex-wrap">
 				{#each blog.meta.tags as tag}

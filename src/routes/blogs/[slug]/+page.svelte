@@ -15,7 +15,7 @@
 	<aside class="mb-5 2xl:order-last">
 		<TableOfContents />
 	</aside>
-	<section class="znc">
+	<section class="znc slide-enter-content">
 		<!-- eslint-disable -->
 		{@html data.content}
 	</section>
