@@ -1,8 +1,7 @@
 <script lang="ts">
 	import BlogLayout from '../../../components/BlogLayout.svelte';
 	import type { PageData } from './$types';
-	import TableOfContents from '../../../components/TableOfContents.svelte';
-	import CommonLayout from '../../../components/CommonLayout.svelte';
+	import TableOfContents from './components/TableOfContents.svelte';
 
 	export let data: PageData;
 </script>
@@ -12,14 +11,12 @@
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </svelte:head>
 
-<CommonLayout>
-	<BlogLayout {data}>
-		<aside class="mb-5 2xl:order-last">
-			<TableOfContents />
-		</aside>
-		<section class="znc">
-			<!-- eslint-disable -->
-			{@html data.content}
-		</section>
-	</BlogLayout>
-</CommonLayout>
+<BlogLayout blog={data}>
+	<aside class="mb-5 2xl:order-last">
+		<TableOfContents />
+	</aside>
+	<section class="znc">
+		<!-- eslint-disable -->
+		{@html data.content}
+	</section>
+</BlogLayout>
