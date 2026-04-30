@@ -1,7 +1,7 @@
 <script lang="ts">
 	import dayjs from 'dayjs';
-	import type { PageData } from '../routes/[slug]/$types';
 	import { page } from '$app/stores';
+	import type { PageData } from '../routes/blogs/[slug]/$types';
 	import Tag from './Tag.svelte';
 
 	export let data: PageData;

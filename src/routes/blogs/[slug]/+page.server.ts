@@ -1,4 +1,5 @@
 import type { PageServerLoad } from './$types';
+import { buildSeo } from '$lib/seo';
 import { findBy } from '$lib/server/content/blog-repository';
 import { transformArticleHtml } from '$lib/server/content/transform-article-html';
 
@@ -9,11 +10,11 @@ export const load: PageServerLoad = async ({ params }) => {
 	return {
 		...blog,
 		content: transformedContent,
-		seo: {
-			pageTitle: blog.title,
+		seo: buildSeo({
+			title: blog.title,
 			description: blog.meta?.description,
 			ogImage: blog.meta?.image?.url ?? blog.eyecatch?.url
-		}
+		})
 	};
 };
 

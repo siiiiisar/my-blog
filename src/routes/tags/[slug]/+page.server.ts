@@ -1,3 +1,4 @@
+import { buildSeo } from '$lib/seo';
 import { listBy } from '$lib/server/content/blog-repository';
 import type { PageServerLoad } from './$types';
 
@@ -6,10 +7,10 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	return {
 		...list,
-		seo: {
-			pageTitle: `#${params.slug} | siiiiisar.blog`,
+		seo: buildSeo({
+			title: `#${params.slug}`,
 			description: `タグ「${params.slug}」の記事一覧`
-		}
+		})
 	};
 };
 
