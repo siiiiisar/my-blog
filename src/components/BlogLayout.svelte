@@ -19,32 +19,14 @@
 </script>
 
 <article>
-	<header class="px-20 py-10 text-center">
+	<header>
 		<h1>
-			<span class="text-lg font-bold lg:text-2xl">
-				{data.title}
-			</span>
+			{data.title}
 		</h1>
-		<div class="mt-5">
-			<span class="text-sm tracking-wider text-gray-500">
-				{dayjs(data.publishedAt).format('YYYY/MM/DD')} 公開
-			</span>
-		</div>
+		<p class="mt-5 opacity-50">
+			{dayjs(data.publishedAt).format('YYYY/MM/DD')} 公開
+		</p>
 		<div class="mt-5 flex justify-center space-x-4">
-			<a
-				href="https://b.hatena.ne.jp/entry/"
-				class="hatena-bookmark-button"
-				data-hatena-bookmark-layout="touch"
-				title="このエントリーをはてなブックマークに追加"
-			>
-				<img
-					src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png"
-					alt="このエントリーをはてなブックマークに追加"
-					width="20"
-					height="20"
-					style="border: none;"
-				/>
-			</a>
 			<script
 				type="text/javascript"
 				src="https://b.st-hatena.com/js/bookmark_button.js"
@@ -116,7 +98,7 @@
 			</button>
 		</div>
 	</header>
-	<div class="sm:p-5 xl:mx-60 2xl:p-10">
+	<div>
 		<div class="flex">
 			{#if data.meta?.tags && data.meta.tags.length > 0}
 				<div class="mb-2 flex flex-wrap">
@@ -128,7 +110,7 @@
 				</div>
 			{/if}
 		</div>
-		<div class="2xl:grid 2xl:grid-cols-4 2xl:gap-8">
+		<div>
 			<slot />
 		</div>
 	</div>

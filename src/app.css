@@ -46,8 +46,52 @@
 		list-style-type: none;
 	}
 
+	.content ol {
+		margin-top: 0.75em;
+		list-style-type: none;
+	}
+
 	.content li {
 		margin-top: 0.75em;
+	}
+
+	.content p {
+		margin-top: 1.25em;
+		margin-bottom: 1.25em;
+	}
+
+	.content h1 {
+		color: var(--fg-deeper);
+		font-weight: 800;
+		font-size: 2.25em;
+		margin-top: 0;
+		margin-bottom: 0.8888889em;
+		line-height: 1.1111111;
+	}
+
+	.content h2 {
+		color: var(--fg-deep);
+		font-weight: 700;
+		font-size: 1.5em;
+		margin-top: 2em;
+		margin-bottom: 1em;
+		line-height: 1.3333333;
+	}
+	.content h3 {
+		color: inherit;
+		font-weight: 600;
+		font-size: 1.25em;
+		margin-top: 1.6em;
+		margin-bottom: 0.6em;
+		line-height: 1.6;
+		opacity: 0.7;
+	}
+	.content h4 {
+		color: inherit;
+		font-weight: 600;
+		margin-top: 1.5em;
+		margin-bottom: 0.5em;
+		line-height: 1.5;
 	}
 
 	.znc h1,
@@ -56,7 +100,7 @@
 	.znc h4,
 	.znc h5,
 	.znc h6 {
-		@apply mb-4 mt-8 font-bold;
+		@apply mb-5 mt-8 font-bold;
 	}
 
 	.znc h1 {
@@ -64,7 +108,7 @@
 	}
 
 	.znc h2 {
-		@apply border-b pb-2 text-2xl;
+		border-bottom: none;
 	}
 
 	.znc h3 {
@@ -73,10 +117,6 @@
 
 	.znc p {
 		@apply mb-4 leading-relaxed;
-	}
-
-	.znc a {
-		@apply text-blue-600 hover:underline;
 	}
 
 	.znc pre {

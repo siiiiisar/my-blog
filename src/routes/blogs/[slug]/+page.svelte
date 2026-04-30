@@ -2,6 +2,7 @@
 	import BlogLayout from '../../../components/BlogLayout.svelte';
 	import type { PageData } from './$types';
 	import TableOfContents from '../../../components/TableOfContents.svelte';
+	import CommonLayout from '../../../components/CommonLayout.svelte';
 
 	export let data: PageData;
 </script>
@@ -11,14 +12,14 @@
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </svelte:head>
 
-<BlogLayout {data}>
-	<aside class="mb-5 2xl:order-last">
-		<TableOfContents />
-	</aside>
-	<section
-		class="znc rounded-lg border border-gray-200/80 bg-white p-6 shadow-sm sm:p-10 lg:p-12 xl:col-span-3"
-	>
-		<!-- eslint-disable -->
-		{@html data.content}
-	</section>
-</BlogLayout>
+<CommonLayout>
+	<BlogLayout {data}>
+		<aside class="mb-5 2xl:order-last">
+			<TableOfContents />
+		</aside>
+		<section class="znc">
+			<!-- eslint-disable -->
+			{@html data.content}
+		</section>
+	</BlogLayout>
+</CommonLayout>
