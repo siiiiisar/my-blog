@@ -2,12 +2,10 @@
 	import GradientText from '../components/GradientText.svelte';
 </script>
 
-<h2 class="slide-enter mt-16 text-3xl font-bold" style="--enter-stage: 0;">
+<h1 class="slide-enter" style="--enter-stage: 0;">
 	Hi! I'm <GradientText text="@siiiiisar" /> ✌🏻
-</h2>
-<br />
-<p class="slide-enter mt-6 text-xl" style="--enter-stage: 1;">
-	京都で働くソフトウェアエンジニアです。
-	<br />
+</h1>
+<p class="slide-enter" style="--enter-stage: 1;">京都で働くソフトウェアエンジニアです。</p>
+<p class="slide-enter" style="--enter-stage: 2;">
 	バックエンドを中心に備忘録がメインのブログです。
 </p>
