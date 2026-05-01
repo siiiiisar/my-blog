@@ -1,5 +1,11 @@
-<footer class="body-font text-gray-500">
-	<div class="container mx-auto flex flex-col items-center px-5 py-8 sm:flex-row">
-		<p class="mt-4 text-sm sm:mt-0">&copy; 2024 - 2025 siiiiisar. All rights reserved.</p>
+<script lang="ts">
+	import dayjs from 'dayjs';
+
+	const currentYear = dayjs().format('YYYY');
+</script>
+
+<footer>
+	<div class="content m-auto mt-10 flex opacity-50">
+		<span class="text-sm">&copy; 2024 - {currentYear} siiiiisar. All rights reserved.</span>
 	</div>
 </footer>
