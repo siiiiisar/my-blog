@@ -1,10 +1,11 @@
 <script lang="ts">
-	import type { PageData } from './$types';
-	import BlogList from '../components/BlogList.svelte';
-	import CommonLayout from '../components/CommonLayout.svelte';
-	export let data: PageData;
+	import GradientText from '../components/GradientText.svelte';
 </script>
 
-<CommonLayout>
-	<BlogList {data} />
-</CommonLayout>
+<h1 class="slide-enter" style="--enter-stage: 0;">
+	Hi! I'm <GradientText text="@siiiiisar" /> ✌🏻
+</h1>
+<p class="slide-enter" style="--enter-stage: 1;">京都で働くソフトウェアエンジニアです。</p>
+<p class="slide-enter" style="--enter-stage: 2;">
+	バックエンドを中心に備忘録がメインのブログです。
+</p>

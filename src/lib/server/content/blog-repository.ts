@@ -1,3 +1,4 @@
+import { error } from '@sveltejs/kit';
 import type { MicroCMSQueries } from 'microcms-js-sdk';
 import type { Blog, BlogList } from '$lib/content/blog';
 import { microcmsClient } from '$lib/server/cms/microcms-client';
@@ -17,25 +18,19 @@ export async function listBy(tagId?: string, queries?: MicroCMSQueries): Promise
 				...(filters ? { filters } : {})
 			}
 		});
-	} catch (error) {
-		console.error('[microcms] failed to fetch blog list', error);
-		return createEmptyBlogList();
+	} catch {
+		error(500, 'ブログの一覧を取得できませんでした。');
 	}
 }
 
 export async function findBy(contentId: string, queries?: MicroCMSQueries): Promise<Blog> {
-	return await microcmsClient.getListDetail<Blog>({
-		endpoint: BLOGS_ENDPOINT,
-		contentId,
-		queries
-	});
-}
-
-function createEmptyBlogList(): BlogList {
-	return {
-		totalCount: 0,
-		offset: 0,
-		limit: 0,
-		contents: []
-	};
+	try {
+		return await microcmsClient.getListDetail<Blog>({
+			endpoint: BLOGS_ENDPOINT,
+			contentId,
+			queries
+		});
+	} catch {
+		error(500, 'ブログを取得できませんでした。');
+	}
 }
