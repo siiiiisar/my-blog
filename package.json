@@ -36,6 +36,9 @@
 		"vite": "^8.0.16"
 	},
 	"type": "module",
+	"engines": {
+		"node": "24.x"
+	},
 	"dependencies": {
 		"cheerio": "^1.2.0",
 		"dayjs": "^1.11.13",
